@@ -1,106 +1,153 @@
-/* Roq base — minimal starting point, edit freely */
+@import "tailwindcss";
+@import "@phosphor-icons/web/regular";
+@import "@phosphor-icons/web/fill";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+/* Layout */
+.lt-page {
+  @apply flex items-start justify-center pb-6 pt-12;
 }
 
-:root {
-  --font: system-ui, -apple-system, sans-serif;
-  --mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
-  --text: #1e293b;
-  --muted: #64748b;
-  --bg: #f8fafc;
-  --surface: #fff;
-  --border: #e2e8f0;
-  --accent: #2b9eb3;
-  --radius: 0.5rem;
+.lt-page-relative {
+  @apply flex items-start justify-center pb-6 pt-12 relative;
 }
 
-html {
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
+.lt-container {
+  @apply w-full max-w-md mx-auto space-y-8 px-4;
 }
 
-code {
-  font-family: var(--mono);
-  font-size: 0.875em;
-  background: var(--bg);
-  padding: 0.15em 0.4em;
-  border-radius: 0.25rem;
+/* Profile */
+.lt-profile {
+  @apply text-center space-y-3;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+.lt-avatar {
+  @apply w-32 h-32 mx-auto rounded-full bg-white dark:bg-slate-800 p-2 shadow-md;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 4rem 1.5rem 2.5rem;
+.lt-name {
+  @apply text-2xl font-bold tracking-tight;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.lt-name-text {
+  @apply text-slate-900 dark:text-white;
 }
 
-.tagline {
-  margin-top: 0.5rem;
-  color: var(--muted);
-  font-size: 1.1rem;
+.lt-handle {
+  @apply text-sky-500 dark:text-sky-400;
 }
 
-/* Content */
-.content {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
+.lt-title {
+  @apply text-sm text-slate-500 dark:text-slate-400;
 }
 
-/* Cards */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+/* Social */
+.lt-social {
+  @apply text-center space-y-3;
 }
 
-.card h2,
-.card h3 {
-  margin-bottom: 0.5rem;
+.lt-social-icons {
+  @apply flex items-center justify-center gap-5;
 }
 
-.card p {
-  color: var(--muted);
+.lt-social-link {
+  @apply text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors;
 }
 
-.card p + p {
-  margin-top: 0.5rem;
+/* Link cards */
+.lt-links {
+  @apply space-y-3;
 }
 
-.card-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.lt-link-card {
+  @apply flex items-center justify-between px-5 py-4 rounded-lg
+  border border-slate-200 dark:border-slate-700
+  bg-white dark:bg-slate-800
+  hover:border-sky-400 dark:hover:border-sky-500
+  hover:shadow-md
+  transition-all duration-200;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
+.lt-link-content {
+  @apply flex items-center gap-3;
 }
 
-.grid .card {
-  margin-bottom: 0;
+.lt-link-icon {
+  @apply text-sky-500 dark:text-sky-400;
+}
+
+.lt-link-name {
+  @apply text-sm font-medium text-slate-800 dark:text-slate-100;
+}
+
+.lt-link-desc {
+  @apply block text-xs text-slate-500 dark:text-slate-400;
+}
+
+.lt-link-arrow {
+  @apply text-slate-300 dark:text-slate-600 transition-colors;
+}
+
+.group:hover .lt-link-arrow {
+  @apply text-sky-500 dark:text-sky-400;
+}
+
+/* Profile links separator */
+.lt-profile-links {
+  @apply pt-2 pb-10 space-y-3;
+}
+
+.lt-separator {
+  @apply text-center text-slate-300 dark:text-slate-600;
+}
+
+/* Trees gallery */
+.lt-trees {
+  @apply space-y-6;
+}
+
+.lt-tree-card {
+  @apply text-center space-y-4 p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800;
+}
+
+.lt-tree-title {
+  @apply text-lg font-bold text-slate-800 dark:text-slate-100;
+}
+
+.lt-tree-desc {
+  @apply text-xs text-slate-500 dark:text-slate-400;
+}
+
+.lt-qr-wrap {
+  @apply inline-block p-3 bg-white rounded-xl;
+}
+
+.lt-tree-actions {
+  @apply flex items-center justify-center gap-4;
+}
+
+.lt-tree-action {
+  @apply text-sm text-sky-600 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors;
+}
+
+.lt-tree-action-btn {
+  @apply text-sm text-sky-600 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors cursor-pointer;
+}
+
+/* Home link */
+.lt-home-link {
+  @apply flex items-center justify-center gap-2 text-base text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors;
+}
+
+/* Navigation */
+.lt-nav-trees {
+  @apply absolute top-4 right-4 text-slate-400 dark:text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 transition-colors;
+}
+
+/* Section heading */
+.lt-heading {
+  @apply text-center space-y-2;
+}
+
+.lt-heading-title {
+  @apply text-2xl font-bold tracking-tight text-slate-900 dark:text-white;
 }
