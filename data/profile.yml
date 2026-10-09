@@ -1,0 +1,29 @@
+name: Gunnar Prüfer
+handle: "@gunnarpruefer"
+title: home.
+image: portrait.jpg
+bio: I am Groot. I am Groot. I am Groot!
+social:
+  - name: GitHub
+    url: https://github.com/gunnarpruefer/
+    icon: github-logo
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/gunnar-pruefer/
+    icon: linkedin-logo
+links:
+  - name: Jenkins
+    url: https://ci.pruefi.eu
+    description: My Jenkins
+    icon: signpost
+  - name: Sonar
+    url: https://sonar.pruefi.eu
+    description: My Sonar
+    icon: signpost
+  - name: Quarkus
+    url: https://quarkus.io
+    description: Supersonic Subatomic Java framework
+    icon: lightning
+  - name: Roq
+    url: https://iamroq.dev
+    description: Static site generator with a Java soul
+    icon: terminal
